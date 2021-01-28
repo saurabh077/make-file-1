@@ -20,6 +20,6 @@ $(OBJ)/hello-world3: hello-world3.c
 	gcc $< -o $@
 	
 clean: 
-	rm -f $(OBJS)
+	rm -rf $(OBJS)
 	
 
