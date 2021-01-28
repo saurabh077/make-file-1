@@ -31,5 +31,4 @@ clobber:
 	@echo "DELETING THE FOLDER"
 	@echo "-------------------------"
 	rm -rf $(OBJ)
-	
 
