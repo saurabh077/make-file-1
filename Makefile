@@ -1,10 +1,16 @@
 #this will execute the program 
 OBJ=obj
 
-all: 
-	mkdir -p $(OBJ) 
-	gcc hello-world.c -o $(OBJ)/hello-world
-	gcc hello-world2.c -o $(OBJ)/hello-world2
+all: 	$(OBJ) $(OBJ)/hello-world $(OBJ)/hello-world2
+
+$(OBJ):
+	mkdir -p $@
+
+$(OBJ)/hello-world: hello-world.c
+	gcc $< -o $@
+
+$(OBJ)/hello-world2: hello-world2.c
+	gcc $< -o $@
 	
 clean: 
 	rm -f $(OBJ)/hello-world
