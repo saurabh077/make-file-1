@@ -16,6 +16,9 @@ $(OBJ)/%: %.c
 	gcc $< -o $@
 
 clean: 
-	rm -rf $(OBJS)
+	rm -f $(OBJS)
+
+clobber:
+     	rm -rf $(OBJ)
 	
 
