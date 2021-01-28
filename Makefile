@@ -1,7 +1,11 @@
 #this will execute the program 
 OBJ=obj
 
-all: 	$(OBJ) $(OBJ)/hello-world $(OBJ)/hello-world2
+OBJS=\
+	$(OBJ) $(OBJ)/hello-world \
+	$(OBJ)/hello-world2
+
+all: 	$(OBJS)
 
 $(OBJ):
 	mkdir -p $@
@@ -13,8 +17,7 @@ $(OBJ)/hello-world2: hello-world2.c
 	gcc $< -o $@
 	
 clean: 
-	rm -f $(OBJ)/hello-world
-	rm -f $(OBJ)/hello-world2
+	rm -f $(OBJS)
 	
 clobber: 
 	rm -rf $(OBJ)
