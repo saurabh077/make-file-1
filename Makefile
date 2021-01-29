@@ -25,7 +25,7 @@ $(OBJ)/%: hello-world.c
 	@echo "-----------------------------"
 	gcc -c $< -o $@
 	@echo "-----------------------------"
-	@echo "BUILD COMPLETE"
+	@echo "***$@ BUILD COMPLETE***"
 	@echo "-----------------------------"
 
 $(BIN)/%: %.c $(OBJ)/hello-world.o
