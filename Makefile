@@ -1,4 +1,5 @@
 #this will execute the program 
+OBJ=obj
 BIN=bin
 
 BINS=\
@@ -6,22 +7,31 @@ BINS=\
 	$(BIN)/hello_world_main2 \
 	$(BIN)/hello_world_main3
 
-all: make_dirs $(BINS) 
+OBJS=\
+	$(OBJ)/hello-world.o
+
+all: make_dirs $(OBJS) $(BIN)
 
 make_dirs:
 	@echo "----------------------------"
 	@echo "CREATING REQUIRED DIRECTORIES"
 	@echo "----------------------------"
 	mkdir -p $(BIN)
+	mkdir -p $(OBJ)
 
-$(BIN)/%: %.c 
-	@echo "------------------------------------"
+$(OBJ)/%: *.c
+	@echo "-----------------------------"
+	@echo "BULDING $@ from $<"
+	@echo "-----------------------------"
+	gcc -c $< -o $@
+
+$(BIN)/%: %.c $(OBJ)/hello-world.o
+	@echo "-----------------------------"
 	@echo "BUILDING $@ from $<"
-	@echo "------------------------------------"
-	gcc  $< hello-world.c -o $@ 
-	@echo "------------------------------------"
+	@echo "-----------------------------"
+	gcc $^ -o $@
 	@echo "***$@ BUILD COMPLETE***"
-	@echo "------------------------------------"
+	@echo "-----------------------------"
 	
 clean: 
 	@echo "------------------------------------"
