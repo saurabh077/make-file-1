@@ -1,46 +1,42 @@
 #this will execute the program 
-OBJ=obj
+BIN=bin
 
-OBJS=\
-	$(OBJ)/hello_world_main \
-	$(OBJ)/hello_world_main2 \
-	$(OBJ)/hello_world_main3 \
+BINS=\
+	$(BIN)/hello_world_main \
+	$(BIN)/hello_world_main2 \
+	$(BIN)/hello_world_main3
 
-all: make_dirs $(OBJS) 
-
-#hello: 
-#	gcc $< hello-world -o $@
+all: make_dirs $(BINS) 
 
 make_dirs:
 	@echo "----------------------------"
 	@echo "CREATING REQUIRED DIRECTORIES"
 	@echo "----------------------------"
-	mkdir -p $(OBJ)
+	mkdir -p $(BIN)
 
-$(OBJ)/%: %.c 
+$(BIN)/%: %.c 
 	@echo "------------------------------------"
 	@echo "BUILDING $@ from $<"
 	@echo "------------------------------------"
 	gcc  $< hello-world.c -o $@ 
 	@echo "------------------------------------"
-	@echo "*** $@ BUILD COMPLETE ***"
+	@echo "***$@ BUILD COMPLETE***"
 	@echo "------------------------------------"
-
 	
 clean: 
 	@echo "------------------------------------"
-	@echo "CLEANING $(OBJ)"
+	@echo "CLEANING $(BIN)"
 	@echo "------------------------------------"
-	rm -f $(OBJS)
+	rm -f $(BINS)
 	@echo "------------------------------------"
-	@echo "CLEAN $(OBJ) COMPLETE"
+	@echo "CLEAN $(BIN) COMPLETE"
 	@echo "------------------------------------"
 
 clobber:
 	@echo "------------------------------------"
 	@echo "REMOVING DIRECTORIES"
 	@echo "------------------------------------"
-	rm -rf $(OBJ)
+	rm -rf $(BIN)
 	@echo "------------------------------------"
 	@echo "CLOBBER COMPLETE"
 	@echo "------------------------------------"
