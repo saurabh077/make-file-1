@@ -10,7 +10,7 @@ BINS=\
 OBJS=\
 	$(OBJ)/hello-world.o
 
-all: make_dirs $(OBJS) $(BIN)
+all: make_dirs $(OBJS) $(BINS)
 
 make_dirs:
 	@echo "----------------------------"
@@ -19,11 +19,14 @@ make_dirs:
 	mkdir -p $(BIN)
 	mkdir -p $(OBJ)
 
-$(OBJ)/%: *.c
+$(OBJ)/%: hello-world.c
 	@echo "-----------------------------"
 	@echo "BULDING $@ from $<"
 	@echo "-----------------------------"
 	gcc -c $< -o $@
+	@echo "-----------------------------"
+	@echo "BUILD COMPLETE"
+	@echo "-----------------------------"
 
 $(BIN)/%: %.c $(OBJ)/hello-world.o
 	@echo "-----------------------------"
