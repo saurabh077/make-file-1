@@ -2,11 +2,14 @@
 OBJ=obj
 
 OBJS=\
-	$(OBJ)/hello-world \
-	$(OBJ)/hello-world2 \
-	$(OBJ)/hello-world3
+	$(OBJ)/hello_world_main \
+	$(OBJ)/hello_world_main2 \
+	$(OBJ)/hello_world_main3
 
-all: make_dirs $(OBJS)
+all: make_dirs $(OBJS) 
+
+#hello: 
+#	gcc $< hello-world -o $@
 
 make_dirs:
 	@echo "----------------------------"
@@ -14,11 +17,11 @@ make_dirs:
 	@echo "----------------------------"
 	mkdir -p $(OBJ)
 
-$(OBJ)/%: %.c
+$(OBJ)/%: %.c 
 	@echo "------------------------------------"
 	@echo "BUILDING $@ from $<"
 	@echo "------------------------------------"
-	gcc $< -o $@
+	gcc  $< hello-world.c -o $@ 
 	@echo "------------------------------------"
 	@echo "*** $@ BUILD COMPLETE ***"
 	@echo "------------------------------------"
