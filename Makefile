@@ -4,7 +4,7 @@ OBJ=obj
 OBJS=\
 	$(OBJ)/hello_world_main \
 	$(OBJ)/hello_world_main2 \
-	$(OBJ)/hello_world_main3
+	$(OBJ)/hello_world_main3 \
 
 all: make_dirs $(OBJS) 
 
@@ -25,7 +25,7 @@ $(OBJ)/%: %.c
 	@echo "------------------------------------"
 	@echo "*** $@ BUILD COMPLETE ***"
 	@echo "------------------------------------"
-	
+
 	
 clean: 
 	@echo "------------------------------------"
