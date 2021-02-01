@@ -30,7 +30,7 @@ $(OBJ)/%: hello-world.c
 	@echo "***$@ BUILD COMPLETE***"
 	@echo "------------------------------------"
 
-$(BIN)/%: %.c $(OBJ)/hello-world.o
+$(BIN)/%: *.c $(OBJ)/hello-world.o
 	@echo "------------------------------------"
 	@echo "BUILDING $@ from $<"
 	@echo "------------------------------------"
