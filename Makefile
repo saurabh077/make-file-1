@@ -7,7 +7,7 @@ BINS = \
 	$(BIN)/hello_world_main3 
 
 OBJS = \
-	$(OBJ)/hello-world.o
+	$(OBJ)/hello-world
 
 all: make_dirs $(BINS)
 
@@ -25,7 +25,7 @@ $(OBJ)/%: %.c
 	@echo "------------------------------------"
 	@echo "BUILDING $@ from $<"
 	@echo "------------------------------------"
-	gcc -c $< -o $@
+	gcc  -c $< -o $@
 	@echo "***$@ BUILD COMPLETE***"
 	@echo "------------------------------------"
 	
@@ -33,7 +33,7 @@ $(BIN)/%: %.c $(OBJ)/hello-world
 	@echo "------------------------------------"
 	@echo "BUILDING $@ from $^"
 	@echo "------------------------------------"
-	gcc $^ -o $@
+	gcc  $^ -o $@
 	@echo "------------------------------------"
 	@echo "***$@ BUILD COMPLETE***"
 	@echo "------------------------------------"
