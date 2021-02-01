@@ -50,6 +50,6 @@ clobber:
 	@echo "------------------------------------"
 	rm -rf $(BIN)
 	@echo "------------------------------------"
-	@echo "CLOBBER COMPLETE"
+	@echo "CLOBBER COMPLETED" 
 	@echo "------------------------------------"
 
