@@ -6,9 +6,6 @@ BINS = \
 	$(BIN)/hello_world_main2 \
 	$(BIN)/hello_world_main3 
 
-OBJS = \
-	$(OBJ)/hello-world.o
-
 all: make_dirs $(BINS)
 
 make_dirs:
@@ -21,7 +18,7 @@ make_dirs:
 	@echo "REQUIRED DIRECTORIES CREATED"
 	@echo "------------------------------------"
 
-$(OBJ)/%: *.c 
+$(OBJ)/%: %.c 
 	@echo "------------------------------------"
 	@echo "BUILDING $@ from $<"
 	@echo "------------------------------------"
@@ -29,9 +26,9 @@ $(OBJ)/%: *.c
 	@echo "***$@ BUILD COMPLETE***"
 	@echo "------------------------------------"
 	
-$(BIN)/%: %.c $(OBJ)/hello-world.o
+$(BIN)/%: %.c $(OBJ)/hello-world
 	@echo "------------------------------------"
-	@echo "BUILDING $@ from $<"
+	@echo "BUILDING $@ from $^"
 	@echo "------------------------------------"
 	gcc $^ -o $@
 	@echo "------------------------------------"
