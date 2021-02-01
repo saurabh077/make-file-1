@@ -21,7 +21,7 @@ make_dirs:
 	@echo "REQUIRED DIRECTORIES CREATED"
 	@echo "------------------------------------"
 
-$(OBJ)/%: *.c 
+$(OBJ)/%: %.c 
 	@echo "------------------------------------"
 	@echo "BUILDING $@ from $<"
 	@echo "------------------------------------"
@@ -29,7 +29,7 @@ $(OBJ)/%: *.c
 	@echo "***$@ BUILD COMPLETE***"
 	@echo "------------------------------------"
 	
-$(BIN)/%: %.c $(OBJ)/hello-world.o
+$(BIN)/%: %.c $(OBJ)/hello-world
 	@echo "------------------------------------"
 	@echo "BUILDING $@ from $<"
 	@echo "------------------------------------"
