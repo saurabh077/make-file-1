@@ -1,12 +1,12 @@
 OBJ=obj
 BIN=bin
 
-BINS=\
+BINS = \
 	$(BIN)/hello_world_main \
 	$(BIN)/hello_world_main2 \
 	$(BIN)/hello_world_main3
 
-OBJS=\
+OBJS = \
 	$(OBJ)/hello-world.o
 
 all: make_dirs $(BINS)
