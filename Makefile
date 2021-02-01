@@ -2,9 +2,12 @@ OBJ=obj
 BIN=bin
 
 BINS = \
-	$(OBJ)/hello_world_main \
-	$(OBJ)/hello_world_main2 \
-	$(OBJ)/hello_world_main3 
+	$(BIN)/hello_world_main \
+	$(BIN)/hello_world_main2 \
+	$(BIN)/hello_world_main3 
+
+OBJS = \
+	$(OBJ)/hello-world.o
 
 all: make_dirs $(BINS)
 
@@ -18,23 +21,23 @@ make_dirs:
 	@echo "REQUIRED DIRECTORIES CREATED"
 	@echo "------------------------------------"
 
-$(OBJ)/%: hello-world.c
-	@echo "------------------------------------"
-	@echo "BULDING $@ from $<"
-	@echo "------------------------------------"
-	gcc -c $< -o $@
-	@echo "------------------------------------"
-	@echo "***$@ BUILD COMPLETE***"
-	@echo "------------------------------------"
-
 $(OBJ)/%: *.c 
 	@echo "------------------------------------"
 	@echo "BUILDING $@ from $<"
 	@echo "------------------------------------"
-	gcc $^ -o $@
+	gcc -c $< -o $@
 	@echo "***$@ BUILD COMPLETE***"
 	@echo "------------------------------------"
 	
+$(BIN)/%: %.c $(OBJ)/hello-world.o
+	@echo "------------------------------------"
+	@echo "BUILDING $@ from $<"
+	@echo "------------------------------------"
+	gcc $^ -o $@
+	@echo "------------------------------------"
+	@echo "***$@ BUILD COMPLETE***"
+	@echo "------------------------------------"
+
 clean: 
 	@echo "------------------------------------"
 	@echo "CLEANING $(BIN)"
