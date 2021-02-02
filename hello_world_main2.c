@@ -3,6 +3,5 @@
 int main()
 {
 	helloWorld();
-	helloWorld();
 	return 0;
 }
