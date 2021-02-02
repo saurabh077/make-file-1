@@ -60,11 +60,11 @@ clobber:
 	@echo "------------------------------------"
 	rm -rf $(BIN)
 	@echo "------------------------------------"
-	@echo "CLOBBER COMPLETE"
+	@echo "REMOVE $(BIN) COMPLETE"
 	@echo "------------------------------------"
 	@echo "REMOVING $(OBJ)"
 	@echo "------------------------------------"
 	rm -rf $(OBJ)
 	@echo "------------------------------------"
-	@echo "CLOBBER COMPLETE"
+	@echo "REMOVE $(OBJ) COMPLETE"
 	@echo "------------------------------------"
