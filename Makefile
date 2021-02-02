@@ -9,7 +9,7 @@ BINS = \
 OBJS = \
 	$(OBJ)/hello-world.o
 
-all: make_dirs $(OBJS) $(BINS)
+all: make_dirs $(BINS)
 
 make_dirs:
 	@echo "------------------------------------"
