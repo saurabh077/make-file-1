@@ -6,6 +6,9 @@ BINS = \
 	$(BIN)/hello_world_main2 \
 	$(BIN)/hello_world_main3
 
+OBJS = \
+	$(OBJ)/hello-world.o
+
 all: make_dirs $(BINS)
 
 make_dirs:
