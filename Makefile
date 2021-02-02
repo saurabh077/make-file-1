@@ -56,13 +56,13 @@ clean:
 
 clobber:
 	@echo "------------------------------------"
-	@echo "REMOVING DIRECTORIES"
+	@echo "REMOVING $(BIN)"
 	@echo "------------------------------------"
 	rm -rf $(BIN)
 	@echo "------------------------------------"
 	@echo "CLOBBER COMPLETE"
 	@echo "------------------------------------"
-	@echo "REMOVING DIRECTORIES"
+	@echo "REMOVING $(OBJ)"
 	@echo "------------------------------------"
 	rm -rf $(OBJ)
 	@echo "------------------------------------"
