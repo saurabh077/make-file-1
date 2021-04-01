@@ -3,5 +3,6 @@
 int main()
 {
 	helloWorld();
+	printf("Completed");
 	return 0;
 }
