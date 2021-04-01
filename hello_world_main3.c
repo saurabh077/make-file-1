@@ -2,6 +2,6 @@
 #include"include/hello.h"
 int main()
 {
-	helloWorld();
+	helloWorld_3();
 	return 0;
 }
