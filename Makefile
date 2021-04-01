@@ -7,9 +7,11 @@ BINS = \
 	$(BIN)/hello_world_main3
 
 OBJS = \
-	$(OBJ)/hello-world.o
+	$(OBJ)/hello_world.o \
+	$(OBJ)/hello_world2.o \
+	$(OBJ)/hello_world3.o
 
-all: make_dirs $(BINS)
+all: make_dirs $(OBJS) $(BINS)
 
 make_dirs:
 	@echo "------------------------------------"
@@ -29,7 +31,7 @@ $(OBJ)/%.o: %.c
 	@echo "***$@ BUILD COMPLETE***"
 	@echo "------------------------------------"
 
-$(BIN)/%: %.c $(OBJ)/hello-world.o
+$(BIN)/%: %.c $(OBJ)/hello_world.o
 	@echo "------------------------------------"
 	@echo "BUILDING $@ from $^"
 	@echo "------------------------------------"
