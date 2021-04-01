@@ -2,6 +2,7 @@
 #include"include/hello.h"
 int main()
 {
-	helloWorld_3();
+	helloWorld();
+	printf("Completed");
 	return 0;
 }
