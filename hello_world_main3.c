@@ -2,7 +2,7 @@
 #include"include/hello.h"
 int main()
 {
-	helloWorld();
+	helloWorld();   
 	printf("Completed");
 	return 0;
 }
